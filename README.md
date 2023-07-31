@@ -1,4 +1,4 @@
-# Data Structures Final Project
+# CISC2200 Data Structures Final Project
 
 This project involved creating a calculator which would perform the four basic calculations of addition, subtraction, multiplication, and division, but to enter the string to be calculated in infix notation. 
 
