@@ -31,6 +31,7 @@ The program also checks for errors in the user input in case the input is not sy
 There would be an error message outputted based on Exception classes created within the program. 
 
 The base idea for the algorithm to convert from infix to postfix (with stack) is the following:
+
 1. Scan the given input from left to right
 1. For the next element in the input
     * If it is an operand output it
@@ -41,4 +42,18 @@ The base idea for the algorithm to convert from infix to postfix (with stack) is
         - If it has higher priority than the top of stack, push operator onstack
         - Else pop the operator from the stack and output it, repeat
     * If it is a closing parenthesis, pop operators from the stack and output themuntil an opening parenthesis is encountered. Pop and discard the openingparenthesis
-1. If there are more inputs, go to step 2, else unstack the remaining operators tooutput
+1. If there are more inputs, go to step 2, else unstack the remaining operators to output
+
+The base idea for the algorithm to evaluate postfix expression (with stack) is the following:
+
+1. Scan the given postfix expression from left to right
+1. For each token in the input postfix expression
+    * if the token is an operand
+        - push it (its value) onto the stack
+    * else if the token is an operator
+        - operand2 = the element popped from the top of the stack
+        - operand1 = the element popped from the top of the stack
+        - compute operand1 operator operand2
+        - push result onto the stack
+1. return top of the stack as a result
+
